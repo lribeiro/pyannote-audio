@@ -48,6 +48,7 @@ def download_from_hf_hub(
     revision: str | None = None,
     cache_dir: str | Path | None = None,
     token: bool | str | None = None,
+    local_files_only: bool = False,
 ) -> str | None:
     """Download file from Huggingface Hub
 
@@ -87,6 +88,7 @@ def download_from_hf_hub(
             library_version=__version__,
             cache_dir=cache_dir,
             token=token,
+            local_files_only=local_files_only,
         )
     except HfHubHTTPError:
         asset_file_name: str = asset_file.name if isinstance(asset_file, AssetFileName) else asset_file

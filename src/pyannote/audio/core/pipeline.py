@@ -139,6 +139,7 @@ class Pipeline(_Pipeline):
         hparams_file: str | Path | None = None,
         token: str | bool | None = None,
         cache_dir: Path | str | None = None,
+        local_files_only: bool = False,
     ) -> Optional["Pipeline"]:
         """Load pretrained pipeline
 
@@ -200,6 +201,7 @@ class Pipeline(_Pipeline):
                 revision=revision,
                 cache_dir=cache_dir,
                 token=token,
+                local_files_only=local_files_only,
             )
             if config_yml is None:
                 return None
